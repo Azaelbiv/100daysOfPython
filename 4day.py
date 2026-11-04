@@ -1,31 +1,47 @@
-#Random Module, Day 4
+#Python list methods
+#Pour créer une liste, on utilise des crochets [] et on sépare les éléments par des virgules.
+#Exemple :  
+ma_liste_de_nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+#Pour accéder à un élément de la liste, on utilise son index (position) en commençant par 0.    
+print(ma_liste_de_nombres[0])  # Affiche 1
+print(ma_liste_de_nombres[5])  # Affiche 6  
 
-import random
+#Liste de chaînes de caractères
+ma_liste_de_noms = ["Alice", "Bob", "Charlie", "David"]
 
-#On peut utiliser la fonction randint() pour générer un entier aléatoire entre deux bornes inclusives. Par exemple, pour générer un entier aléatoire entre 1 et 20, on peut utiliser le code suivant :
-random_integer = random.randint(1, 20)
-print(random_integer)
+#Accéder à un élément de la liste
+print(ma_liste_de_noms[2])  # Affiche "Charlie"
+print(ma_liste_de_noms[-1])  # Affiche "David" (dernier élément de la liste)
 
-#On peut également utiliser la fonction random() pour générer un nombre flottant aléatoire entre 0 et 1. Par exemple, pour générer un nombre flottant aléatoire entre 0 et 1, on peut utiliser le code suivant :
-random_float = random.random()
-print(random_float)
+#Ajouter un élément à la fin de la liste avec append()
+ma_liste_de_noms.append("Eve")
+print(ma_liste_de_noms)  # Affiche ['Alice', 'Bob', 'Charlie', 'David', 'Eve']
 
-#NB : La fonction random() ne prend pas d'arguments et renvoie un nombre flottant aléatoire compris entre 0 et 1. Pour générer un nombre flottant aléatoire dans une plage spécifique, on peut multiplier le résultat de random() par la plage souhaitée. Par exemple, pour générer un nombre flottant aléatoire entre 0 et 5, on peut utiliser le code suivant :
-random_float_range = round(random.random() * 5, 2)
-print(random_float_range)
+#Insérer un élément à une position spécifique avec insert()
+ma_liste_de_noms.insert(1, "Frank")
+print(ma_liste_de_noms)  # Affiche ['Alice', 'Frank', 'Bob', 'Charlie', 'David', 'Eve']
 
-#Remarque : La fonction round() est utilisée pour arrondir le nombre flottant à deux décimales.
+#Supprimer un élément de la liste avec remove()
+ma_liste_de_noms.remove("Charlie")
+print(ma_liste_de_noms)  # Affiche ['Alice', 'Frank', 'Bob', 'David', 'Eve']
 
+#Supprimer un élément à une position spécifique avec pop()
+ma_liste_de_noms.pop(2)  # Supprime l'élément à l'index 2 (Bob)
+print(ma_liste_de_noms)  # Affiche ['Alice', 'Frank', 'David', 'Eve']
 
-#Exercice : Créez un programme qui génère un nombre aléatoire entre 1 et 100 et demande à l'utilisateur de deviner ce nombre. Le programme doit indiquer si le nombre deviné est trop bas, trop haut ou correct. Le programme doit continuer à demander à l'utilisateur de deviner jusqu'à ce qu'il trouve le bon nombre.
-print("Bienvenue dans le jeu de devinette !")
-nombre_secret = random.randint(1, 100)
-nombre_devine = 0
-while nombre_devine != nombre_secret :
-    nombre_devine = int(input("Devinez le nombre entre 1 et 100 : "))
-    if nombre_devine < nombre_secret : 
-        print("Trop bas ! Essayez encore. ")
-    elif nombre_devine > nombre_secret : 
-        print("Trop haut ! Essayez encore. ")
-    else :
-        print("Félicitations ! Vous avez deviné le nombre secret :", nombre_secret)
+#Trier la liste avec sort()
+ma_liste_de_noms.sort()
+print(ma_liste_de_noms)  # Affiche ['Alice', 'David', 'Eve', 'Frank']   
+
+#Inverser l'ordre des éléments de la liste avec reverse()
+ma_liste_de_noms.reverse() 
+print(ma_liste_de_noms)  # Affiche ['Frank', 'Eve', 'David', 'Alice']
+
+#Ajouter plusieurs éléments à la liste avec extend()
+ma_liste_de_noms.extend(["Grace", "Heidi"])
+print(ma_liste_de_noms)  # Affiche ['Frank', 'Eve', 'David', 'Alice', 'Grace', 'Heidi']
+
+#Methode split() pour diviser une chaîne de caractères en une liste
+noms = input("Entrez des noms séparés par des virgules : ")
+maliste_de_noms = noms.split(",")
+print(maliste_de_noms)  # Affiche la liste des noms entrés par l'utilisateur

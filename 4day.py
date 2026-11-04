@@ -15,3 +15,17 @@ random_float_range = round(random.random() * 5, 2)
 print(random_float_range)
 
 #Remarque : La fonction round() est utilisée pour arrondir le nombre flottant à deux décimales.
+
+
+#Exercice : Créez un programme qui génère un nombre aléatoire entre 1 et 100 et demande à l'utilisateur de deviner ce nombre. Le programme doit indiquer si le nombre deviné est trop bas, trop haut ou correct. Le programme doit continuer à demander à l'utilisateur de deviner jusqu'à ce qu'il trouve le bon nombre.
+print("Bienvenue dans le jeu de devinette !")
+nombre_secret = random.randint(1, 100)
+nombre_devine = 0
+while nombre_devine != nombre_secret :
+    nombre_devine = int(input("Devinez le nombre entre 1 et 100 : "))
+    if nombre_devine < nombre_secret : 
+        print("Trop bas ! Essayez encore. ")
+    elif nombre_devine > nombre_secret : 
+        print("Trop haut ! Essayez encore. ")
+    else :
+        print("Félicitations ! Vous avez deviné le nombre secret :", nombre_secret)
